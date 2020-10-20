@@ -1,0 +1,24 @@
+package cn.com.swing;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+public class IndexPage {
+	/*
+	 * author:命运的信徒 date:2019/1/19 arm:熟悉swing布局
+	 */
+	public static JFrame firtPage() {
+		// 以下是显示位移的地方
+		JFrame jf=new JFrame("绞车房");
+		CommonPart.common(jf);
+		// 放置图片
+		JLabel jl3 = new JLabel(new ImageIcon("WebRoot/img/hd.PNG"));
+		jf.add(jl3);
+		jl3.setBounds(0, 80, 700, 600);
+		return jf;
+	}
+	public static void main(String[] args) {
+		//运行程序
+		firtPage();
+	}
+	
+}

@@ -1,0 +1,38 @@
+package cn.com.swing;
+import java.awt.Font;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import cn.com.crud.SelectData;
+public class FirstPage {
+	 /*
+	 * author:命运的信徒 arm:程序的初始页面 date:2019/1/19
+	 */
+	static JFrame jf=null;
+	public static void firtPage() {
+		jf=new JFrame("平硐");
+		jf=CommonPart.common(jf);
+		//面板
+		// 以下是显示位移的地方
+		JLabel jl1 = new JLabel("平硐位移");
+		jl1.setFont(new Font("宋体", Font.BOLD, 20));
+		jf.add(jl1);
+		jl1.setBounds(130, 100, 100, 30);
+		// 查询数据库
+		SelectData sl = new SelectData();
+		String vy = sl.selectInfo("3");
+		JLabel jl2 = new JLabel(vy);
+        
+		jl2.setFont(new Font("宋体", Font.BOLD, 20));
+		jf.add(jl2);
+		jl2.setBounds(230, 100,300, 30);
+		// 放置图片
+		JLabel jl3 = new JLabel(new ImageIcon("WebRoot/img/sight1.png"));
+		jf.add(jl3);
+		jl3.setBounds(0, 150, 700, 500);
+	}
+ 
+	public static void main(String[] args) {
+		firtPage();
+	}
+}
